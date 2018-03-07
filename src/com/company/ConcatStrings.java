@@ -1,5 +1,6 @@
 package com.company;
 
+import javax.crypto.Cipher;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -68,5 +69,65 @@ public class ConcatStrings {
 
         }
         System.out.println(str8);
+    }
+
+    public String leetCode(String s){
+
+        char[] charS = s.toCharArray();
+        String temp = "";
+
+        for(int i = 0; i < s.length(); i++){
+
+            switch(charS[i]){
+                case 'A': case 'a':
+                    temp+='4';
+                    break;
+                case 'E': case 'e':
+                    temp+='3';
+                    break;
+                case 'G': case 'g':
+                    temp+='6';
+                    break;
+                case 'I': case 'i':
+                    temp+='1';
+                    break;
+                case 'O': case 'o':
+                    temp+='0';
+                    break;
+                case 'S': case 's':
+                    temp+='5';
+                    break;
+                case 'T': case 't':
+                    temp+='7';
+                    break;
+                    default:
+                        temp+=charS[i];
+            }
+        }
+
+        return temp;
+    }
+    public void caesarCipherSwitch(String word){
+
+        char[] wordArray = word.toLowerCase().toCharArray();
+        String temp = "";
+        int shiftValue = 13;
+        int shift;
+        int num;
+
+        for(int i = 0; i < wordArray.length; i++) {
+            num = (int)wordArray[i];
+            if (97 <= num && num <= 122){
+                  if((num + shiftValue) > 122){
+                      temp += (char)(97 + ((num+shiftValue) - 123));
+                  }
+                  else{
+                      temp += (char)(num+ shiftValue);
+                  }
+            }
+            else
+                temp += wordArray[i];
+        }
+        System.out.println(temp);
     }
 }

@@ -14,8 +14,8 @@ public class Main {
         one.sumNum();
 
         //Largest Number, which calls positive Numbers
-        LargestNumber two = new LargestNumber();
-        two.largeNum();
+//        LargestNumber two = new LargestNumber();
+//        two.largeNum();
 
         //PositiveNumbers three = new PositiveNumbers();
         //three.getNumbers();
@@ -51,12 +51,14 @@ public class Main {
         five.findMe("Dina");
 
         try{
-            five.crawlingFriday(console.readLine());
-            five.reverseString(console.readLine());
+      //      five.crawlingFriday(console.readLine());
+        //    five.reverseString(console.readLine());
+            System.out.println(five.leetCode("Leet speak"));
+            System.out.println(five.leetCode("Sign up for our park newsletter and we’ll let you know immediately if you’ve won two tickets to Six Flags!"));
+
 
         }catch (Exception e){}
 
-
-
+        five.caesarCipherSwitch("dina");
     }
 }
